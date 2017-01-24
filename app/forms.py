@@ -7,14 +7,11 @@ from django.utils.translation import ugettext_lazy as _
 from requestor import requestor
 
 class AuthForm(AuthenticationForm):
-    username = forms.CharField(
-        label=_('Username'),
-        widget=forms.TextInput(attrs={'class': 'form-control'})
-    )
-    password = forms.CharField(
-        label=_('Password'),
-        widget=forms.PasswordInput(attrs={'class': 'form-control'})
-    )
+
+    def __init__(self, *args, **kwargs):
+        super(AuthForm, self).__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs['class'] = 'form-control'
+        self.fields['password'].widget.attrs['class'] = 'form-control'
 
     def clean(self):
         username = self.cleaned_data.get('username')
