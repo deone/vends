@@ -128,4 +128,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Endpoints
-AUTH_URL = 'https://accounts-deone.c9users.io/auth/'
+ACCOUNTS_URL = 'https://accounts-deone.c9users.io'
+AUTH_URL = ACCOUNTS_URL + '/auth/login/'
