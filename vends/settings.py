@@ -129,4 +129,4 @@ STATIC_URL = '/static/'
 
 # Endpoints
 ACCOUNTS_URL = 'https://accounts-deone.c9users.io'
-AUTH_URL = ACCOUNTS_URL + '/auth/login/'
+AUTH_URL = ACCOUNTS_URL + '/auth/login'

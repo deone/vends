@@ -24,7 +24,8 @@ class AuthForm(AuthenticationForm):
             }
             response = requestor(settings.AUTH_URL, data=data)
 
-            for obj in serializers.deserialize('json', response['result']):
+            for obj in serializers.deserialize('json', response.json()['result']):
+                # save object locally
                 obj.save()
                 self.user_cache = obj.object
 
